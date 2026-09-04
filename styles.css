@@ -1,12 +1,16 @@
 /*
-CLASS MOON
+PSEUDOELEMENTO DE LA CLASE MOON
 
-En el archivo CSS, seleccionamos la clase moon:
-1. Establecemos el ancho (width) y el alto (height) de la clase moon a 220px.
-2. Establecemos el border-radius a 50%.
-3. Establecemos la posición (position) de la clase moon a relative.
-4. Establecemos el background-image a linear-gradient(30deg, #13223f, #0e1a30).
-¡Ahora deberías ver la luna!
+En el archivo CSS, seleccionamos la clase moon y utilizamos el pseudo-elemento ::before,
+
+1. Establecemos el contenido de este elemento como "" (cadena vacía).
+2. Establecemos el background-color en rgba(0, 0, 0, 0).
+3. Establecemos el border-radius en 50%.
+4. Establecemos el z-index en -1.
+5. Establecemos el width y height en 100%.
+6. Establecemos la position en absolute y establece el display en block.
+7. Añadimos una animación llamada "eclipse-animation", que se ejecutará cada 3.2s en estado linear, 
+infinite y alternate.
 */
 
 *{
@@ -37,4 +41,16 @@ body{
     border-radius: 50%;
     position: relative;
     background-image: linear-gradient(30deg, #13223f, #0e1a30);
+}
+
+.moon::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    animation: eclipse-animation 3.2s linear infinite alternate;
 }
