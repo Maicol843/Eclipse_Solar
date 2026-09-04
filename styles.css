@@ -1,22 +1,10 @@
 /*
-ANIMACION ECLIPSE
+RESPONSIVIDAD
 
-En el archivo CSS, creamos una animación usando @keyframes:
-Nombramos la animación "eclipse-animation".
-Añadimos tres selectores de fotogramas clave (keyframes-selector) que sean 0% , 50% y 100%.
-
-Añadimos estilos CSS en el selector de fotogramas clave 0%:
-1. Establecemos box-shadow a none.
-2. Establecemos transform a translate(-30px, 30px) scale(0.9).
-
-Añadimos estilos CSS en el selector de fotogramas clave 50%:
-1. Establecemos transform a translate(0px, 0px) scale(1.02).
-2. Establecemos box-shadow a 0 0 10px #f9f3f2, 0 0 80px 8px #C7938B.
-3. Establecemos background-color a #efdbd8.
-
-Añadimos estilos CSS en el selector de fotogramas clave 100%:
-1. Establecemos transform a translate(30px, -30px) scale(0.9).
-2. Establecemos box-shadow a none.
+Escribimos una media query para max-width 768px.
+Dentro de la media query @media,
+1. Seleccionamos la clase moon.
+2. Establecemos el ancho y el alto a 160px.
 */
 
 *{
@@ -74,5 +62,12 @@ body{
   100% {
     transform: translate(30px, -30px) scale(0.9);
     box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .moon {
+    width: 160px;
+    height: 160px;
   }
 }
