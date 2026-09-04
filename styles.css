@@ -1,16 +1,22 @@
 /*
-PSEUDOELEMENTO DE LA CLASE MOON
+ANIMACION ECLIPSE
 
-En el archivo CSS, seleccionamos la clase moon y utilizamos el pseudo-elemento ::before,
+En el archivo CSS, creamos una animación usando @keyframes:
+Nombramos la animación "eclipse-animation".
+Añadimos tres selectores de fotogramas clave (keyframes-selector) que sean 0% , 50% y 100%.
 
-1. Establecemos el contenido de este elemento como "" (cadena vacía).
-2. Establecemos el background-color en rgba(0, 0, 0, 0).
-3. Establecemos el border-radius en 50%.
-4. Establecemos el z-index en -1.
-5. Establecemos el width y height en 100%.
-6. Establecemos la position en absolute y establece el display en block.
-7. Añadimos una animación llamada "eclipse-animation", que se ejecutará cada 3.2s en estado linear, 
-infinite y alternate.
+Añadimos estilos CSS en el selector de fotogramas clave 0%:
+1. Establecemos box-shadow a none.
+2. Establecemos transform a translate(-30px, 30px) scale(0.9).
+
+Añadimos estilos CSS en el selector de fotogramas clave 50%:
+1. Establecemos transform a translate(0px, 0px) scale(1.02).
+2. Establecemos box-shadow a 0 0 10px #f9f3f2, 0 0 80px 8px #C7938B.
+3. Establecemos background-color a #efdbd8.
+
+Añadimos estilos CSS en el selector de fotogramas clave 100%:
+1. Establecemos transform a translate(30px, -30px) scale(0.9).
+2. Establecemos box-shadow a none.
 */
 
 *{
@@ -53,4 +59,20 @@ body{
     position: absolute;
     display: block;
     animation: eclipse-animation 3.2s linear infinite alternate;
+}
+
+@keyframes eclipse-animation {
+  0% {
+    box-shadow: none;
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+  50% {
+    transform: translate(0px, 0px) scale(1.02);
+    box-shadow: 0 0 10px #f9f3f2, 0 0 80px 8px #C7938B;
+    background-color: #efdbd8;
+  }
+  100% {
+    transform: translate(30px, -30px) scale(0.9);
+    box-shadow: none;
+  }
 }
