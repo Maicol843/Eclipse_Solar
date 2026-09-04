@@ -1,0 +1,13 @@
+/*
+ETIQUETA UNIVERSAL
+
+En el archivo CSS, seleccionamos la etiqueta universal (*):
+1. Establecemos el margin y el padding en 0px.
+2. Establecemos box-sizing en inherit.
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
